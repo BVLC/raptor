@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Raptor : Code basis for the Realtime adAPtive detecTOR (first published and referred to at IEEE ICRA 2014)" />
+    <meta name="description" content="Raptor : Realtime adAPtive detecTOR (published at IEEE ICRA 2014)" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/BVLC/raptor">View on GitHub</a>
 
           <h1 id="project_title">Raptor</h1>
-          <h2 id="project_tagline">Code basis for the Realtime adAPtive detecTOR (first published and referred to at IEEE ICRA 2014)</h2>
+          <h2 id="project_tagline"><b>R</b>ealtime ad<b>AP</b>tive detec<b>TOR</b> (published at IEEE ICRA 2014)</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/BVLC/raptor/zipball/master">Download this project as a .zip file</a>
@@ -31,11 +31,67 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>
-<a name="raptor" class="anchor" href="#raptor"><span class="octicon octicon-link"></span></a>raptor</h1>
+<!-- <h1><a name="raptor" class="anchor" href="#raptor"><span class="octicon octicon-link"></span></a>project</h1> -->
 
-<p>Code basis for the Realtime adAPtive detecTOR (first published and referred to at IEEE ICRA 2014)</p>
+<p>Raptor is an interactive learning approach for object detection models and a showcase how to quickly perform learning and adaptation with large-scale datasets. The details about the method are
+given in the following paper:</p>
+<p>
+Daniel Göhring, Judy Hoffman, Erik Rodner, Kate Saenko, and Trevor Darrell.<br> <a href=paper.pdf>Interactive Adaptation of Real-Time Object Detectors.</a> 
+International Conference on Robotics and Automation (ICRA). 2014
+<a href=paper.pdf>
+<img width=95% src="images/paper-first-pages.png">
+<img width=95% src="images/paper-last-pages.png">
+</a>
+</p>
       </section>
+      <section id="video" class="inner">
+      <h3>Video</h3>
+      <center>
+<object width="425" height="265"><param name="movie" value="https://video.google.com/get_player?BASE_URL=https%3A%2F%2Fdocs.google.com%2F&amp;cc_load_policy=1&amp;docid=0BwO69G0kg_oCbVJRc3JFcVZYWUk&amp;fshd=1&amp;partnerid=30&amp;ps=docs" /><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="true" /><embed src="https://video.google.com/get_player?BASE_URL=https%3A%2F%2Fdocs.google.com%2F&amp;cc_load_policy=1&amp;docid=0BwO69G0kg_oCbVJRc3JFcVZYWUk&amp;fshd=1&amp;partnerid=30&amp;ps=docs" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="425" height="265"></embed></object>
+      </center>
+      </section>
+      <section id="summary" class="inner">
+      <h3>Summary</h3>
+      <p>
+      We present a framework for quickly training 2D object detectors for robotic perception. Our method can be used by robotics practitioners to quickly (under 30 seconds per object) build a large-scale real-time perception system.
+      In particular, we show how to create new detectors on the fly
+      using large-scale internet image
+      databases, thus allowing a user to choose among thousands
+      of available categories to build a detection system suitable for
+      the particular robotic application. Furthermore, we show how
+      to adapt these models to the current environment with just
+      a few in-situ images. Experiments on existing 2D benchmarks
+      evaluate the speed, accuracy, and flexibility of our system.
+      </p>
+      </section>
+
+    <section id="authors" class="inner">
+    <h3>Authors</h3> 
+    <img width=90% src="images/all-authors.jpg">
+    <ul>
+    <li><a href="http://page.mi.fu-berlin.de/drgoehring/">Daniel Göhring</a> (FU Berlin, Germany)</li>
+    <li><a href="https://www.eecs.berkeley.edu/~jhoffman/domainadapt/index.html">Judy Hoffman</a> (ICSI/EECS UC Berkeley, United States)</li>
+    <li><a href="https://sites.google.com/site/erikrodner/">Erik Rodner</a> (Friedrich Schiller University Jena, Germany)</li>
+    <li><a href="http://www1.icsi.berkeley.edu/~saenko/">Kate Saenko</a> (UMass Lowell, United States)</li>
+    <li><a href="http://www.eecs.berkeley.edu/~trevor/">Trevor Darrell</a> (ICSI/EECS UC Berkeley, United States)</li>
+    </ul>
+    
+    </section>
+
+    <section id="bibtex" class="inner">
+    <h3>Bibtex</h3>
+    <pre>
+@inproceedings{Goehring14:ITR,
+  title = {Interactive Adaptation of Real-Time Object Detectors},
+  booktitle = {International Conference on Robotics and Automation (ICRA)},
+  author = {Daniel Göhring and Judy Hoffman and Erik Rodner and Kate Saenko and Trevor Darrell},
+  year = {2014}
+}
+    </pre>
+    </section>
+
+
+
     </div>
 
     <!-- FOOTER  -->
