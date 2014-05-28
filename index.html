@@ -74,10 +74,26 @@ International Conference on Robotics and Automation (ICRA). 2014
     <li><a href="https://sites.google.com/site/erikrodner/">Erik Rodner</a> (Friedrich Schiller University Jena, Germany)</li>
     <li><a href="http://www1.icsi.berkeley.edu/~saenko/">Kate Saenko</a> (UMass Lowell, United States)</li>
     <li><a href="http://www.eecs.berkeley.edu/~trevor/">Trevor Darrell</a> (ICSI/EECS UC Berkeley, United States)</li>
-    </ul>
-    
+    </ul> 
     </section>
-
+    <section id="software" class="inner">
+    <h3>Software</h3>
+    The approach described in the paper is a prototype we build on top of the following methods and software:
+    <ul>
+    <li>Whitened HOG approach of <a href="http://www.cs.berkeley.edu/~bharath2/">Bharath Hariharan</a></li>
+    <li>Fast DPM/HOG detection with FFT by Francois Fleuret and Charles Dubout: <a href="http://www.idiap.ch/scientific-research/resources/exact-acceleration-of-linear-object-detectors">code</a></li>
+    <li>ROS/C++ module for interactive annotation and detection <i>(available soon)</i></li>
+    </ul>
+    </section>
+    <section id="dataset" class="inner">
+    <h3>Office dataset with bounding boxes</h3>
+    <p>
+    To perform quantitative experiments with object detection and domain adaptation, we used Amazon Mechanical Turk to annotate the <a href="http://www.cs.uml.edu/~saenko/projects.html#data">Office dataset</a> of Kate Saenko:
+    <ul>
+    <li><a href="http://www.icsi.berkeley.edu/~erik/office-bb.tar">Bounding box annotations and images of the Office dataset</a> (original sizes for the webcam domain and reduced image sizes for DSLR in contrast to the original dataset)</li>
+    <li>Our software for obtaining bounding boxes using Amazon Mechanical Turk is also free available: <a href="https://github.com/erodner/amt-bb-toolkit">mturk scripts and webpage</a></li>
+    </ul>
+    </section>
     <section id="bibtex" class="inner">
     <h3>Bibtex</h3>
     <pre>
