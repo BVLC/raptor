@@ -1,0 +1,2 @@
+binder,/home/bolt/ros_workspace/ffld/out/binder_or_magazine_box,-0.8
+bottle,/home/bolt/ros_workspace/ffld/out/bottle,-0.8

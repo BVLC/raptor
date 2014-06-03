@@ -1,0 +1,15 @@
+K 10
+svn:ignore
+V 76
+bin
+lib
+build
+.build_version
+.rosgcov_files
+cpp
+oct
+lisp
+.project
+.cproject
+
+END

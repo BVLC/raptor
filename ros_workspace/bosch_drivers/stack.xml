@@ -1,0 +1,22 @@
+<stack>
+  <description brief="Collection of hardware drivers.">
+
+    This stack primarily contains drivers for MEMS sensors from Bosch Sensortec. Sensors
+    require a hardware interface, such as an Ardunio, to connect to the computer.
+    The drivers are not dependent on ROS, but basic ROS nodes are provided.
+
+    Other hardware drivers in use at Bosch RTC are also found in this stack.
+
+  </description>
+  <author>Philip Roan, Benjamin Pitzer, Joshua Vasquez, and others. Maintained by Philip Roan</author>
+  <license>BSD, LGPL, Apache 2.0</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/bosch_drivers</url>
+  <depend stack="common_msgs" /> <!-- sensor_msgs -->
+  <depend stack="diagnostics" /> <!-- self_test -->
+  <depend stack="geometry" /> <!-- tf -->
+  <depend stack="image_common" /> <!-- image_transport -->
+  <depend stack="ros" /> <!-- std_msgs, roscpp -->
+  <depend stack="vision_opencv" /> <!-- opencv2 -->
+
+</stack>

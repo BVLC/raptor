@@ -1,0 +1,6 @@
+libgphoto-dev:
+  ubuntu: libgphoto2-2-dev
+libswscale-dev:
+  ubuntu: libswscale-dev
+libusb-1.0-dev:
+  ubuntu: libusb-1.0-0-dev

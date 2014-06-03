@@ -1,0 +1,7 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~voxelLength" : \b [double] Voxelsize X  min: 0.0, default: 0.001111, max: 0.1
+- \b "~runPeriodically" : \b [bool] Runs Table Top Recognition Periodically min: False, default: True, max: True
+

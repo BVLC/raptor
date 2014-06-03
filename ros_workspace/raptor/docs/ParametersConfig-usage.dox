@@ -1,0 +1,8 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dynamic_tutorials" pkg="kinect" type="dynamic_tutorials">
+  <param name="voxelLength" type="double" value="0.001111" />
+  <param name="runPeriodically" type="bool" value="True" />
+</node>
+\endverbatim
+

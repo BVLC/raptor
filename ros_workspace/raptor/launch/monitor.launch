@@ -1,0 +1,12 @@
+<launch>
+  <node name="transfer_images" pkg="raptor" type="transfer_images">
+	<remap from="image_in" to="/usb_cam/image_raw"/>
+/usb_cam/image_raw
+ </node>
+  <node name="image_view_original" pkg="image_view" type="image_view">
+	<remap from="image" to="/usb_cam/image_raw"/>
+  </node>
+  <node name="image_view_modified" pkg="image_view" type="image_view">
+	<remap from="image" to="/bolt/vision/image"/>
+  </node>
+</launch>

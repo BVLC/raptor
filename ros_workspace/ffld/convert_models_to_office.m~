@@ -1,0 +1,15 @@
+function convert_models_to_office( )
+%UNTITLED Summary of this function goes here
+%   Detailed explanation goes here
+
+a = load('office/binder_or_magazine_box_final.mat');
+convertmodel(a.model, 'outoffice/binder_or_magazine_box')
+
+
+
+
+
+
+
+end
+
