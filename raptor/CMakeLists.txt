@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 2.6.2)
 include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
 
-
-INCLUDE_DIRECTORIES($ENV{ROS_WORKSPACE}/ffld)
-
 rosbuild_init()
 
 #set the default path for built executables to the "bin" directory
@@ -20,7 +17,7 @@ rosbuild_add_executable(transfer_images src/transfer_images.cpp)
 rosbuild_add_executable(transfer_images_ffld src/transfer_images_ffld.cpp)
 rosbuild_add_executable(transfer_images_torecord src/transfer_images_torecord.cpp) 
 
-TARGET_LINK_LIBRARIES(transfer_images_ffld -L$ENV{ROS_WORKSPACE}/ffld/build -lFFLD)
+TARGET_LINK_LIBRARIES(transfer_images_ffld -lFFLD)
 
 FIND_PACKAGE(JPEG REQUIRED)
 IF(JPEG_FOUND)
