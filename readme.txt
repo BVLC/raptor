@@ -12,16 +12,21 @@ The detector requires less modules so we start the installation guide with the d
 #install git
 sudo apt-get install git
 
-#create a folder, e.g. raptor.berkeleyvision, cd into that folder, then execute:
-git clone https://github.com/BVLC/raptor.git
-
-copy the content under ros_workspace
-
 #install fftw3
 sudo apt-get install fftw3
 sudo apt-get install libfftw3-dev
 
+#install openni+usb_cam
+sudo apt-get install ros-fuerte-openni-* ros-fuerte-bosch-drivers
+
+#create a folder, e.g. raptor.berkeleyvision, cd into that folder, then execute:
+git clone https://github.com/BVLC/raptor.git
+
+cd into that folder, then...
+
+
 cd ffld
+mkdir -p build
 cd build
 cmake ..
 make
