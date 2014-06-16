@@ -24,9 +24,11 @@ git clone https://github.com/BVLC/raptor.git
 cd into that folder, then...
 
 ```
-rosws init /opt/ros/fuerte/setup.bash
+rosws init
+source setup.bash
 rosws merge workspace.rosinstall
 rosws up
+source setup.bash
 rosmake -a
 ```
 
