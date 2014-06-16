@@ -24,36 +24,17 @@ git clone https://github.com/BVLC/raptor.git
 
 cd into that folder, then...
 
-
-cd ffld
-mkdir -p build
-cd build
-cmake ..
-make
-
-#change permission to folder cfg and its subfiles
-chmod 777 cfg
-chmod 777 cfg/*
-
-compile bosch/usb_cam  (under ros_workspace, you can also checkout the usb-cam-stack yourself under: 
-
-svn http://svn.code.sf.net/p/bosch-ros-pkg/code/trunk/stacks/bosch_drivers
-)
-
-
-#therefore create a build folder 'bosch_drivers/usb_cam/build', cd into 'build' and execute 'cmake ..' and make
-
-#test if the camera works, you should see an image: 
-roscore
-rosrun usb_cam usb_cam_node
-rosrun image_view image_view image:=/usb_cam/image_raw
-
-#adjust paths (change 'goehring' into your login name plus make sure the rest of the folders match your environment) in data/demo-office.config.template and runDemo.sh
+```
+rosws init /opt/ros/fuerte/setup.bash
+rosws merge workspace.rosinstall
+rosws up
+rosmake -a
+```
 
 #Test the full detection setup, after execution of these 4 commands you should see an image with detection boxes:
 
 1. roscore
-2. rosrun usb_cam usb_cam_node 
+2. start any webcam node or openni_launch openni.launch (with appropriate remappings)
 3. roslaunch raptor monitor.launch 
 4. roslaunch raptor detection.launch 
 
