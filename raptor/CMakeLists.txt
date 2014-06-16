@@ -8,10 +8,10 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 #set the default path for built libraries to the "lib" directory
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
-link_directories(.)
-
 #rosbuild_gensrv()
 
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DEIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DEIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET")
 
 rosbuild_add_executable(transfer_images src/transfer_images.cpp)
 rosbuild_add_executable(transfer_images_ffld src/transfer_images_ffld.cpp)
@@ -24,9 +24,6 @@ IF(JPEG_FOUND)
   INCLUDE_DIRECTORIES(${JPEG_INCLUDE_DIR})
   TARGET_LINK_LIBRARIES(transfer_images_ffld ${JPEG_LIBRARIES})
 ENDIF()
-
-
-
 
 # There are no CMake Eigen package, so find it ourselves
 FILE(GLOB EIGEN_ARCHIVE "eigen*")
