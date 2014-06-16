@@ -25,9 +25,8 @@ cd into that folder, then...
 
 ```
 rosws init
-source setup.bash
+rosws merge /opt/ros/fuerte
 rosws merge workspace.rosinstall
-rosws up
 source setup.bash
 rosmake -a
 ```
