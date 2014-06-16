@@ -268,14 +268,14 @@ public:
 		}
 	}
 	//
-*/
 
 
-        //get the path to the kinect package
-        std::string path = ros::package::getPath("kinect");
+
+        //get the path to the raptor package
+        std::string path = ros::package::getPath("raptor");
         std::stringstream strstr, strstr_dest;
-        strstr << path << "/../../../irobot_lib_iSpot_1.6_x86_64/bottleX.ppm";
-        strstr_dest << path << "/../../../irobot_lib_iSpot_1.6_x86_64/bottleY.ppm";
+        strstr << path << "/../bottleX.ppm";
+        strstr_dest << path << "/../bottleY.ppm";
 
 
         //write the image into the DPM folder - it's important, where the path is
@@ -290,7 +290,7 @@ public:
         //std::stringstream sys_call;
 
         //execute the DPM code - it's important, where the path is again
-    /*    if (true) {
+        if (true) {
             sys_call << "cd " << path << "/../../../irobot_lib_iSpot_2.0.beta2_x86_64; ./cudafelz_example bottle1.ppm out.ppm";
             int dpmdet = system (sys_call.str().c_str());
             std::cerr << "after execution of dpm - return value " << dpmdet << "\n" << std::cerr;
