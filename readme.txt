@@ -19,7 +19,6 @@ sudo apt-get install libfftw3-dev
 #install openni+usb_cam
 sudo apt-get install ros-fuerte-openni-* ros-fuerte-bosch-drivers
 
-#create a folder, e.g. raptor.berkeleyvision, cd into that folder, then execute:
 git clone https://github.com/BVLC/raptor.git
 
 cd into that folder, then...
@@ -34,7 +33,7 @@ rosmake -a
 #Test the full detection setup, after execution of these 4 commands you should see an image with detection boxes:
 
 1. roscore
-2. start any webcam node or openni_launch openni.launch (with appropriate remappings)
+2. ** start any webcam node or openni_launch, and modify monitor.launch and detection.launch appropriately **
 3. roslaunch raptor monitor.launch 
 4. roslaunch raptor detection.launch 
 
