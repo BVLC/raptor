@@ -28,7 +28,7 @@ rosws init
 rosws merge /opt/ros/fuerte
 rosws merge workspace.rosinstall
 source setup.bash
-rosmake -a
+rosmake raptor
 ```
 
 #Test the full detection setup, after execution of these 4 commands you should see an image with detection boxes:
