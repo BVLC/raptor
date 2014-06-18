@@ -272,18 +272,18 @@ public:
 
 
         //get the path to the kinect package
-        std::string path = ros::package::getPath("kinect");
-        std::stringstream strstr, strstr_dest;
-        strstr << path << "/../../../irobot_lib_iSpot_1.6_x86_64/bottleX.ppm";
-        strstr_dest << path << "/../../../irobot_lib_iSpot_1.6_x86_64/bottleY.ppm";
+//        std::string path = ros::package::getPath("kinect");
+//        std::stringstream strstr, strstr_dest;
+//        strstr << path << "/../../../irobot_lib_iSpot_1.6_x86_64/bottleX.ppm";
+//        strstr_dest << path << "/../../../irobot_lib_iSpot_1.6_x86_64/bottleY.ppm";
 
 
         //write the image into the DPM folder - it's important, where the path is
 
 
 //!!!!!!!!COMMENT BACK IN 2013-07-10
-        cv::imwrite(strstr.str().c_str(), cv_ptr->image);
-        cv::imwrite(strstr_dest.str().c_str(), cv_ptr_dest->image);
+//        cv::imwrite(strstr.str().c_str(), cv_ptr->image);
+//        cv::imwrite(strstr_dest.str().c_str(), cv_ptr_dest->image);
 //
 
         //std::cerr << "Executing Bottle recognition." << std::endl;
