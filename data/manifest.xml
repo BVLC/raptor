@@ -1,0 +1,14 @@
+<package>
+  <description brief="data">
+
+     data
+
+  </description>
+  <author>Eric</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/data</url>
+
+</package>
+
+
