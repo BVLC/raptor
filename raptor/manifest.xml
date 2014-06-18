@@ -17,6 +17,7 @@
   <depend package="pcl_ros"/>
   <depend package="tf"/>
   <depend package="ffld_ros"/>
+  <depend package="data"/>
 </package>
 
 

@@ -28,7 +28,7 @@ rosws init
 rosws merge /opt/ros/fuerte
 rosws merge workspace.rosinstall
 source setup.bash
-rosmake -a
+rosmake raptor
 
 ```
 #verify that this was done correctly by running the following line:
