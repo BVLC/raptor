@@ -66,7 +66,7 @@ public:
 	recordNow = false;
 	recordEveryNthFrame = 60;
 	recordKFrames = 5;
-	dataDir = "/home/goehring/ros_workspace/data";
+	dataDir = "/home/james/ros_workspace/data";
 
 
 /*	string path = "";
