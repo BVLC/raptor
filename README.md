@@ -7,30 +7,34 @@ Interactive Adaptation of Real-Time Object Detectors. International Conference o
 
 Details and paper: http://raptor.berkeleyvision.org/
 
-Implemented by Daniel Göhring and Erik Rodner. Reorganized, cleaned, corrected by Eric McCannThis 
+Implemented by Daniel Göhring and Erik Rodner. Reorganized, cleaned, corrected by Eric McCann
 
-      ***﻿Raptor Installation and Configuration Instructions***
+Installation on Ubuntu
+=======================
 
 This demo consists of the object learner and detector.
-The detector requires less modules so we start the installation guide with the detector.
+The detector requires less modules so we start the installation guide with the detector. The current description
+focuses on Ubuntu.
 
-#install ros fuerte
+1. install ros fuerte (see guide under http://wiki.ros.org/fuerte/Installation/Ubuntu)
+2. install git
 
-#see guide under http://wiki.ros.org/fuerte/Installation/Ubuntu
+    sudo apt-get install git
 
-#install git
-sudo apt-get install git
+3. install fftw3
 
-#install fftw3
-sudo apt-get install fftw3
-sudo apt-get install libfftw3-dev
+    sudo apt-get install fftw3
+    sudo apt-get install libfftw3-dev
 
-#install openni+usb_cam
-sudo apt-get install ros-fuerte-openni-* ros-fuerte-bosch-drivers
+4. install ``openni+usb_cam``
 
-git clone https://github.com/BVLC/raptor.git
+    sudo apt-get install ros-fuerte-openni-* ros-fuerte-bosch-drivers
+    
+5. get raptor
 
-cd into that folder, then...
+    git clone https://github.com/BVLC/raptor.git
+
+6. cd into that folder, then...
 
 ```
 rosws init
@@ -40,29 +44,28 @@ source setup.bash
 rosmake raptor
 
 ```
-#verify that this was done correctly by running the following line:
-rosversion ros
-#the computer should output the version number.
 
-#Go to /data/demo-office.config.template, data/runDemo.sh, and raptor/demo-office.config, and raptor/src/transfer_images_torecord.cpp.  Change “goehring” with your login name, and adjust the paths if necessary.
+7. verify that this was done correctly by running the following line:
 
-#To use a PrimeSense kinect instead of a webcam, follow the PrimeSense installation instructions on the following page; then edit the launch files by removing usb_cam..., and replacing it with "/camera/rgb/image_color"
+    rosversion ros
 
-#Test the full detection setup, after execution of these 4 commands you should see an image with detection boxes:
+   the computer should output the version number.
 
-1. roscore
-2. rosrun usb_cam usb_cam_node 
-3. roslaunch raptor monitor.launch 
-4. roslaunch raptor detection.launch 
+8. Go to /data/demo-office.config.template, data/runDemo.sh, and raptor/demo-office.config, and raptor/src/transfer_images_torecord.cpp.  Change “goehring” with your login name, and adjust the paths if necessary.
 
+9. To use a PrimeSense kinect instead of a webcam, follow the PrimeSense installation instructions on the following page; then edit the launch files by removing usb_cam..., and replacing it with "/camera/rgb/image_color"
 
+10. Test the full detection setup, after execution of these 4 commands you should see an image with detection boxes:
+```
+roscore
+rosrun usb_cam usb_cam_node 
+roslaunch raptor monitor.launch 
+roslaunch raptor detection.launch 
+```
 
+PrimeSense Installation
+========================
 
+1. Go to http://mitchtech.net/ubuntu-kinect-openni-primesense/ and follow the instructions for the first and third download.
 
-
-
-                      ***PrimeSense Installation***
-
-#Go to http://mitchtech.net/ubuntu-kinect-openni-primesense/ and follow the instructions for the first and third download.
-
-#For the second, DO NOT use the git clone git://github.com/avin2/SensorKinect.git download, instead, use https://github.com/PrimeSense/Sensor, which is a newer version.  However, the installation instructions are the same.
+2. For the second, DO NOT use the git clone git://github.com/avin2/SensorKinect.git download, instead, use https://github.com/PrimeSense/Sensor, which is a newer version.  However, the installation instructions are the same.
