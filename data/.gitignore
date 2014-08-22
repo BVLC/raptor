@@ -1,0 +1,8 @@
+*.template
+*.txt
+*.cfg
+*.mat
+*.conf*
+*.ppm
+*.fftw
+*.sh

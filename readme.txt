@@ -3,7 +3,7 @@ The detector requires less modules so we start the installation guide with the d
 
 ==================================================
 
-1. Installation guide to run the detector only:
+      ***﻿Raptor Installation and Configuration Instructions***
 
 #install ros fuerte
 
@@ -12,38 +12,32 @@ The detector requires less modules so we start the installation guide with the d
 #install git
 sudo apt-get install git
 
-#create a folder, e.g. raptor.berkeleyvision, cd into that folder, then execute:
-git clone https://github.com/BVLC/raptor.git
-
-copy the content under ros_workspace
-
 #install fftw3
 sudo apt-get install fftw3
 sudo apt-get install libfftw3-dev
 
-cd ffld
-cd build
-cmake ..
-make
+#install openni+usb_cam
+sudo apt-get install ros-fuerte-openni-* ros-fuerte-bosch-drivers
 
-#change permission to folder cfg and its subfiles
-chmod 777 cfg
-chmod 777 cfg/*
+git clone https://github.com/BVLC/raptor.git
 
-compile bosch/usb_cam  (under ros_workspace, you can also checkout the usb-cam-stack yourself under: 
+cd into that folder, then...
 
-svn http://svn.code.sf.net/p/bosch-ros-pkg/code/trunk/stacks/bosch_drivers
-)
+```
+rosws init
+rosws merge /opt/ros/fuerte
+rosws merge workspace.rosinstall
+source setup.bash
+rosmake raptor
 
+```
+#verify that this was done correctly by running the following line:
+rosversion ros
+#the computer should output the version number.
 
-#therefore create a build folder 'bosch_drivers/usb_cam/build', cd into 'build' and execute 'cmake ..' and make
+#Go to /data/demo-office.config.template, data/runDemo.sh, and raptor/demo-office.config, and raptor/src/transfer_images_torecord.cpp.  Change “goehring” with your login name, and adjust the paths if necessary.
 
-#test if the camera works, you should see an image: 
-roscore
-rosrun usb_cam usb_cam_node
-rosrun image_view image_view image:=/usb_cam/image_raw
-
-#adjust paths (change 'goehring' into your login name plus make sure the rest of the folders match your environment) in data/demo-office.config.template and runDemo.sh
+#To use a PrimeSense kinect instead of a webcam, follow the PrimeSense installation instructions on the following page; then edit the launch files by removing usb_cam..., and replacing it with "/camera/rgb/image_color"
 
 #Test the full detection setup, after execution of these 4 commands you should see an image with detection boxes:
 
@@ -52,4 +46,14 @@ rosrun image_view image_view image:=/usb_cam/image_raw
 3. roslaunch raptor monitor.launch 
 4. roslaunch raptor detection.launch 
 
-==================================================
+
+
+
+
+
+
+                      ***PrimeSense Installation***
+
+#Go to http://mitchtech.net/ubuntu-kinect-openni-primesense/ and follow the instructions for the first and third download.
+
+#For the second, DO NOT use the git clone git://github.com/avin2/SensorKinect.git download, instead, use https://github.com/PrimeSense/Sensor, which is a newer version.  However, the installation instructions are the same.
