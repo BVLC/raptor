@@ -1,11 +1,17 @@
 <launch>
+
+  <arg name="img_topic" default="/camera/rgb/image_color" />
+
   <node name="transfer_images_ffld" pkg="raptor" type="transfer_images_ffld">
-	<remap from="image_in" to="/camera/rgb/image_color"/>
+	<remap from="image_in" to="$(arg img_topic)"/>
  </node>
+
   <!--node name="image_view_original" pkg="image_view" type="image_view">
-	<remap from="image" to="/camera/rgb/image_color"/>
+	<remap from="image" to="$(arg img_topic)"/>
   </node>
   <node name="image_view_modified" pkg="image_view" type="image_view">
 	<remap from="image" to="/bolt/vision/image"/>
   </node-->
+
+
 </launch>

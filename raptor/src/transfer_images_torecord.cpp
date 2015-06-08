@@ -64,17 +64,14 @@ public:
 	recordNow = false;
 	recordEveryNthFrame = 60;
 	recordKFrames = 5;
-	dataDir = "/home/james/ros_workspace/data";
 
+	//dataDir = "/home/james/ros_workspace/data";
 
-/*	string path = "";
+	string path = "";
 	path.append(ros::package::getPath("raptor"));
-	path.append("/../data");
+	path.append("/data");
 
-	dataDir = path;*/
-
-
-
+	dataDir = path;
 
     }
 
@@ -103,10 +100,6 @@ public:
 				
 				myfile.open (strstr2.str().c_str());
 				myfile.close();
-
-
-
-
 
 		}
     }

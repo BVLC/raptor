@@ -81,7 +81,6 @@ public:
 
 	dpmdetect->addModels(path);
 
-	
 	colors["bottle"] = 2;
 	//colors["expo2"] = 3;
 	//colors["listerine"] = 3;
