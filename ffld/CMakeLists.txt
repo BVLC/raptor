@@ -11,13 +11,25 @@ project(ffld)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+
 find_package(catkin REQUIRED cmake_modules)
 
 find_package(Eigen REQUIRED)
+find_package(OpenCV REQUIRED)
+find_package(JPEG REQUIRED)
+find_package(LibXml2 REQUIRED)
 
+# There are no CMake FFTW package, so find it ourselves
+FIND_PATH(FFTW3_INCLUDE_DIR fftw3.h)
+IF(FFLD_HOGPYRAMID_DOUBLE)
+  FIND_LIBRARY(FFTW3_LIBRARIES fftw3)
+ELSE()
+  FIND_LIBRARY(FFTW3_LIBRARIES fftw3f)
+ENDIF()
+IF(NOT FFTW3_INCLUDE_DIR OR NOT FFTW3_LIBRARIES)
+  MESSAGE(FATAL_ERROR "Could not find fftw3.")
+ENDIF()
 
-## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
 
 ###################################
 ## catkin specific configuration ##
@@ -45,9 +57,11 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
   ${Eigen_INCLUDE_DIRS}
-
-
+  ${OpenCV_INCLUDE_DIRS}
+  ${JPEG_INCLUDE_DIR}
+  ${LIBXML2_INCLUDE_DIR}
 )
+
 
 # The build options
 OPTION(FFLD_HOGPYRAMID_FELZENSZWALB_FEATURES "Use Felzenszwalb's original features (slower and not as accurate, provided for compatibility only)." OFF)
@@ -69,10 +83,9 @@ ADD_EXECUTABLE(ffld src/ffld.cpp)
 ADD_EXECUTABLE(detect src/detect.cpp)
 ADD_EXECUTABLE(detect_opencv include/ffld/opencvToJPEGImage.h src/detect_opencv.cpp)
 
-TARGET_LINK_LIBRARIES(ffld FFLD ${catkin_LIBRARIES})
-TARGET_LINK_LIBRARIES(detect FFLD ${catkin_LIBRARIES})
-TARGET_LINK_LIBRARIES(detect_opencv FFLD ${catkin_LIBRARIES})
-
+TARGET_LINK_LIBRARIES(ffld FFLD ${catkin_LIBRARIES} ${Eigen_LIBRARIES} ${JPEG_LIBRARIES} ${LIBXML2_LIBRARIES} ${FFTW3_LIBRARIES})
+TARGET_LINK_LIBRARIES(detect FFLD ${catkin_LIBRARIES} ${Eigen_LIBRARIES} ${JPEG_LIBRARIES} ${LIBXML2_LIBRARIES} ${FFTW3_LIBRARIES})
+TARGET_LINK_LIBRARIES(detect_opencv FFLD ${catkin_LIBRARIES} ${Eigen_LIBRARIES} ${OpenCV_LIBRARIES} ${LIBXML2_LIBRARIES} ${FFTW3_LIBRARIES})
 
 # Define the options
 IF(FFLD_HOGPYRAMID_FELZENSZWALB_FEATURES)
@@ -82,7 +95,6 @@ ENDIF()
 IF(FFLD_HOGPYRAMID_DOUBLE)
   ADD_DEFINITIONS(-DFFLD_HOGPYRAMID_DOUBLE)
 ENDIF()
-
 
 
 # Not required, but stronlgy recommended on multi-core systems
@@ -113,3 +125,8 @@ install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
   FILES_MATCHING PATTERN "*.h"
 )
+
+
+
+
+

@@ -7,7 +7,7 @@
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include "opencvToJPEGImage.h"
+#include "ffld/opencvToJPEGImage.h"
 
 using namespace std;
 using namespace FFLD;
