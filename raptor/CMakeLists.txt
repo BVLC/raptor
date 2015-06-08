@@ -1,23 +1,36 @@
-cmake_minimum_required(VERSION 2.6.2)
-include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+cmake_minimum_required(VERSION 2.8.3)
+project(raptor)
 
-rosbuild_init()
+## Find catkin macros and libraries
+## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
+## is used, also find other catkin packages
+find_package(catkin REQUIRED COMPONENTS
+  cv_bridge
+  data
+  ffld_ros
+  image_transport
+  opencv2
+  pcl
+  pcl_ros
+  roscpp
+  rospy
+  sensor_msgs
+  std_msgs
+  tf
+)
 
-#set the default path for built executables to the "bin" directory
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-#set the default path for built libraries to the "lib" directory
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+
 
 #rosbuild_gensrv()
 
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DEIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET")
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DEIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET")
 
-rosbuild_add_executable(transfer_images src/transfer_images.cpp)
-rosbuild_add_executable(transfer_images_ffld src/transfer_images_ffld.cpp)
-rosbuild_add_executable(transfer_images_torecord src/transfer_images_torecord.cpp) 
+add_executable(transfer_images src/transfer_images.cpp)
+add_executable(transfer_images_ffld src/transfer_images_ffld.cpp)
+add_executable(transfer_images_torecord src/transfer_images_torecord.cpp) 
 
-TARGET_LINK_LIBRARIES(transfer_images_ffld -lFFLD)
+TARGET_LINK_LIBRARIES(transfer_images_ffld ${catkin_LIBRARIES}})
 
 FIND_PACKAGE(JPEG REQUIRED)
 IF(JPEG_FOUND)
