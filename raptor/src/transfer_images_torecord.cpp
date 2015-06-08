@@ -16,8 +16,6 @@
 
 
 
-
-
 using namespace std;
 namespace enc = sensor_msgs::image_encodings;
 

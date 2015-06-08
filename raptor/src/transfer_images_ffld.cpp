@@ -9,8 +9,8 @@
 
 #include <fstream>
 #include <time.h>
-#include <opencvToJPEGImage.h>
-#include <DPMDetection.h>
+#include <ffld/opencvToJPEGImage.h>
+#include <ffld/DPMDetection.h>
 
 #include <map>
 

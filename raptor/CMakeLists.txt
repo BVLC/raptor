@@ -6,45 +6,33 @@ project(raptor)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge
-  data
-  ffld_ros
+  ffld
   image_transport
-  opencv2
-  pcl
   pcl_ros
   roscpp
   rospy
   sensor_msgs
   std_msgs
   tf
+  cmake_modules
+  pcl_conversions
 )
 
+find_package(Eigen REQUIRED)
+find_package(OpenCV REQUIRED)
+find_package(JPEG REQUIRED)
+find_package(LibXml2 REQUIRED)
+find_package(PCL REQUIRED)
 
 
-#rosbuild_gensrv()
-
-SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DEIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET")
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DEIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET")
-
-add_executable(transfer_images src/transfer_images.cpp)
-add_executable(transfer_images_ffld src/transfer_images_ffld.cpp)
-add_executable(transfer_images_torecord src/transfer_images_torecord.cpp) 
-
-TARGET_LINK_LIBRARIES(transfer_images_ffld ${catkin_LIBRARIES}})
-
-FIND_PACKAGE(JPEG REQUIRED)
-IF(JPEG_FOUND)
-  INCLUDE_DIRECTORIES(${JPEG_INCLUDE_DIR})
-  TARGET_LINK_LIBRARIES(transfer_images_ffld ${JPEG_LIBRARIES})
-ENDIF()
-
-# There are no CMake Eigen package, so find it ourselves
-FILE(GLOB EIGEN_ARCHIVE "eigen*")
-FIND_PATH(EIGEN_INCLUDE_DIR Eigen ${EIGEN_ARCHIVE} .)
-IF(NOT EIGEN_INCLUDE_DIR)
-  MESSAGE(FATAL_ERROR "Could not find Eigen.")
-ENDIF()
-INCLUDE_DIRECTORIES(${EIGEN_INCLUDE_DIR})
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+  ${Eigen_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
+  ${JPEG_INCLUDE_DIR}
+  ${LIBXML2_INCLUDE_DIR}
+  ${PCL_INCLUDE_DIR} 
+)
 
 # There are no CMake FFTW package, so find it ourselves
 FIND_PATH(FFTW3_INCLUDE_DIR fftw3.h)
@@ -57,10 +45,10 @@ IF(NOT FFTW3_INCLUDE_DIR OR NOT FFTW3_LIBRARIES)
   MESSAGE(FATAL_ERROR "Could not find fftw3.")
 ENDIF()
 INCLUDE_DIRECTORIES(${FFTW3_INCLUDE_DIR})
-TARGET_LINK_LIBRARIES(transfer_images_ffld ${FFTW3_LIBRARIES})
 
 
-# Not required, but stronlgy recommended on multi-core systems
+
+#  Not required, but stronlgy recommended on multi-core systems
 FIND_PACKAGE(OpenMP)
 IF(OPENMP_FOUND)
   SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
@@ -69,11 +57,24 @@ IF(OPENMP_FOUND)
 ENDIF()
 
 
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DEIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DEIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET")
+
+catkin_package()
+
+add_executable(transfer_images          src/transfer_images.cpp)
+add_executable(transfer_images_ffld     src/transfer_images_ffld.cpp)
+add_executable(transfer_images_torecord src/transfer_images_torecord.cpp) 
+
+target_link_libraries(transfer_images          ${catkin_LIBRARIES} ${Eigen_LIBRARIES} ${JPEG_LIBRARIES} ${LIBXML2_LIBRARIES} ${FFTW3_LIBRARIES} ${OpenCV_LIBRARIES} ${PCL_LIBRARIES})
+target_link_libraries(transfer_images_ffld     ${catkin_LIBRARIES} ${Eigen_LIBRARIES} ${JPEG_LIBRARIES} ${LIBXML2_LIBRARIES} ${FFTW3_LIBRARIES} ${OpenCV_LIBRARIES} ${PCL_LIBRARIES})
+target_link_libraries(transfer_images_torecord ${catkin_LIBRARIES} ${Eigen_LIBRARIES} ${JPEG_LIBRARIES} ${LIBXML2_LIBRARIES} ${FFTW3_LIBRARIES} ${OpenCV_LIBRARIES} ${PCL_LIBRARIES})
 
 
-#add dynamic reconfigure api
-#rosbuild_find_ros_package(dynamic_reconfigure)
-#include(${dynamic_reconfigure_PACKAGE_PATH}/cmake/cfgbuild.cmake)
-#gencfg()
-
+# Mark executables and/or libraries for installation
+install(TARGETS transfer_images transfer_images_torecord transfer_images_ffld 
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
