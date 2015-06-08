@@ -18,7 +18,7 @@
 // <http://www.gnu.org/licenses/>.
 //--------------------------------------------------------------------------------------------------
 
-#include "Object.h"
+#include "ffld/Object.h"
 
 #include <iostream>
 

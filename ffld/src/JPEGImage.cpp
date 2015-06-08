@@ -18,7 +18,7 @@
 // <http://www.gnu.org/licenses/>.
 //--------------------------------------------------------------------------------------------------
 
-#include "JPEGImage.h"
+#include "ffld/JPEGImage.h"
 
 #include <algorithm>
 #include <utility>

@@ -21,8 +21,8 @@
 #ifndef FFLD_PATCHWORK_H
 #define FFLD_PATCHWORK_H
 
-#include "HOGPyramid.h"
-#include "Rectangle.h"
+#include "ffld/HOGPyramid.h"
+#include "ffld/Rectangle.h"
 
 #include <utility>
 

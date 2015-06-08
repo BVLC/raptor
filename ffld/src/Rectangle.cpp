@@ -18,7 +18,7 @@
 // <http://www.gnu.org/licenses/>.
 //--------------------------------------------------------------------------------------------------
 
-#include "Rectangle.h"
+#include "ffld/Rectangle.h"
 
 #include <algorithm>
 #include <iostream>

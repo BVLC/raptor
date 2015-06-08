@@ -18,7 +18,7 @@
 // <http://www.gnu.org/licenses/>.
 //--------------------------------------------------------------------------------------------------
 
-#include "Patchwork.h"
+#include "ffld/Patchwork.h"
 
 #include <algorithm>
 #include <cstdio>

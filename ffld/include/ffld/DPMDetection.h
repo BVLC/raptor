@@ -6,10 +6,10 @@
 #include <string>
 #include <map>
 
-#include "HOGPyramid.h"
-#include "Mixture.h"
-#include "Patchwork.h"
-#include "JPEGImage.h"
+#include "ffld/HOGPyramid.h"
+#include "ffld/Mixture.h"
+#include "ffld/Patchwork.h"
+#include "ffld/JPEGImage.h"
 
 namespace FFLD {
 

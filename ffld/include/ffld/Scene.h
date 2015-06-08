@@ -21,7 +21,7 @@
 #ifndef FFLD_SCENE_H
 #define FFLD_SCENE_H
 
-#include "Object.h"
+#include "ffld/Object.h"
 
 #include <string>
 #include <vector>

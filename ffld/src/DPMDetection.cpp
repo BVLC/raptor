@@ -5,12 +5,12 @@
 #include <iostream>
 #include <fstream>
 
-#include "timingtools.h"
+#include "ffld/timingtools.h"
 timeval Start, Stop;
 
-#include "Intersector.h"
+#include "ffld/Intersector.h"
 
-#include "DPMDetection.h"
+#include "ffld/DPMDetection.h"
 
 using namespace FFLD;
 using namespace std;

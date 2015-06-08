@@ -18,7 +18,7 @@
 // <http://www.gnu.org/licenses/>.
 //--------------------------------------------------------------------------------------------------
 
-#include "Model.h"
+#include "ffld/Model.h"
 
 #include <algorithm>
 #include <cmath>

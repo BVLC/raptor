@@ -18,11 +18,11 @@
 // <http://www.gnu.org/licenses/>.
 //--------------------------------------------------------------------------------------------------
 
-#include "SimpleOpt.h"
+#include "ffld/SimpleOpt.h"
 
-#include "Intersector.h"
-#include "Mixture.h"
-#include "Scene.h"
+#include "ffld/Intersector.h"
+#include "ffld/Mixture.h"
+#include "ffld/Scene.h"
 
 #include <algorithm>
 #include <fstream>

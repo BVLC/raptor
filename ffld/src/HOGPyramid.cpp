@@ -18,7 +18,7 @@
 // <http://www.gnu.org/licenses/>.
 //--------------------------------------------------------------------------------------------------
 
-#include "HOGPyramid.h"
+#include "ffld/HOGPyramid.h"
 
 #include <algorithm>
 #include <cassert>

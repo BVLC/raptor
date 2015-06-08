@@ -21,7 +21,7 @@
 #ifndef FFLD_OBJECT_H
 #define FFLD_OBJECT_H
 
-#include "Rectangle.h"
+#include "ffld/Rectangle.h"
 
 #include <iosfwd>
 

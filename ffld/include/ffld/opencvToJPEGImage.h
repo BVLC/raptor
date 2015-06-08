@@ -1,7 +1,7 @@
 #ifndef OPENCV_TO_JPEGIMAGE_INCLUDE
 #define OPENCV_TO_JPEGIMAGE_INCLUDE
 
-#include "JPEGImage.h"
+#include "ffld/JPEGImage.h"
 
 #include <opencv2/imgproc/imgproc.hpp>
 

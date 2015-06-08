@@ -21,7 +21,7 @@
 #ifndef FFLD_MODEL_H
 #define FFLD_MODEL_H
 
-#include "HOGPyramid.h"
+#include "ffld/HOGPyramid.h"
 
 namespace FFLD
 {	

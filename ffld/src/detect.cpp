@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string>
 
-#include "DPMDetection.h"
+#include "ffld/DPMDetection.h"
 
 using namespace std;
 using namespace FFLD;

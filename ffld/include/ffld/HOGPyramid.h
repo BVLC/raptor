@@ -21,7 +21,7 @@
 #ifndef FFLD_HOGPYRAMID_H
 #define FFLD_HOGPYRAMID_H
 
-#include "JPEGImage.h"
+#include "ffld/JPEGImage.h"
 
 #include <Eigen/Core>
 #include <Eigen/Sparse>

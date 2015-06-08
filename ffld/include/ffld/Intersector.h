@@ -21,7 +21,7 @@
 #ifndef FFLD_INTERSECTOR_H
 #define FFLD_INTERSECTOR_H
 
-#include "Rectangle.h"
+#include "ffld/Rectangle.h"
 
 #include <algorithm>
 

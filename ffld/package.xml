@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>ffld_ros</name>
+  <name>ffld</name>
   <version>0.0.0</version>
-  <description>The ffld_ros package</description>
+  <description>The ffld package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
@@ -28,23 +28,20 @@
   <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
 
 
-  <!-- The *_depend tags are used to specify dependencies -->
-  <!-- Dependencies can be catkin packages or system dependencies -->
-  <!-- Examples: -->
-  <!-- Use build_depend for packages you need at compile time: -->
-  <!--   <build_depend>message_generation</build_depend> -->
-  <!-- Use buildtool_depend for build tool packages: -->
-  <!--   <buildtool_depend>catkin</buildtool_depend> -->
-  <!-- Use run_depend for packages you need at runtime: -->
-  <!--   <run_depend>message_runtime</run_depend> -->
-  <!-- Use test_depend for packages you need only for testing: -->
-  <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>cmake_modules</build_depend>
 
+  <build_depend>eigen</build_depend>
+  <run_depend>eigen</run_depend>
 
-  <!-- The export tag contains other, unspecified, tags -->
-  <export>
-    <!-- Other tools can request additional information be placed here -->
+  <build_depend>libjpeg</build_depend>
+  <run_depend>libjpeg</run_depend>
 
-  </export>
+  <build_depend>libfftw3</build_depend>
+  <run_depend>libfftw3</run_depend>
+
+  <build_depend>libxml2</build_depend>
+  <run_depend>libxml2</run_depend>
+
 </package>

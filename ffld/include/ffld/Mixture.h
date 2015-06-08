@@ -21,8 +21,8 @@
 #ifndef FFLD_MIXTURE_H
 #define FFLD_MIXTURE_H
 
-#include "Model.h"
-#include "Patchwork.h"
+#include "ffld/Model.h"
+#include "ffld/Patchwork.h"
 
 namespace FFLD
 {

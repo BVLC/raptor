@@ -18,7 +18,7 @@
 // <http://www.gnu.org/licenses/>.
 //--------------------------------------------------------------------------------------------------
 
-#include "Scene.h"
+#include "ffld/Scene.h"
 
 #include <algorithm>
 #include <sstream>

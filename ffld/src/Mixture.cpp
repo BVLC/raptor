@@ -18,8 +18,8 @@
 // <http://www.gnu.org/licenses/>.
 //--------------------------------------------------------------------------------------------------
 
-#include "Intersector.h"
-#include "Mixture.h"
+#include "ffld/Intersector.h"
+#include "ffld/Mixture.h"
 
 #include <algorithm>
 #include <fstream>
