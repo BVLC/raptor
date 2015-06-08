@@ -16,20 +16,22 @@ This demo consists of the object learner and detector.
 The detector requires less modules so we start the installation guide with the detector. The current description
 focuses on Ubuntu.
 
-1. install ROS Indigo (see guide under http://wiki.ros.org/indigo/Installation/Ubuntu)
-2. install git if you haven't already got it
+1. Install ROS Indigo (see guide under http://wiki.ros.org/indigo/Installation/Ubuntu)
 
-    sudo apt-get install git
+2. Clone raptor into your catkin workspace, e.g. git clone https://github.com/BVLC/raptor.git
 
-3. clone raptor into your catkin workspace, e.g. git clone https://github.com/BVLC/raptor.git
+3. Install deps
 
-4. install deps
+```bash
+rosdep install --from-paths raptor  --ignore-src
+```
 
-5. build
+4. Build with catkin_make 
 
-6. Go to raptor/demo-office.config and adjust the paths.
+5. Go to raptor/demo-office.config and adjust the paths to point to the correct plan on your file system
 
-10. Test the full detection setup, after execution of these 4 commands you should see an image with detection boxes:
+6. Test the full detection setup, after execution of these 4 commands you should see an image with detection boxes:
+
 ```
 roscore
 rosrun usb_cam usb_cam_node 
@@ -37,3 +39,8 @@ roslaunch raptor monitor.launch img_topic:=/usb_cam/image_raw
 roslaunch raptor detection.launch img_topic:=/usb_cam/image_raw
 ```
 
+If you get errors fromt the cam node, you could try the launch file which sets some different parameters
+
+```
+roslaunch raptor usb_cam.launch
+```

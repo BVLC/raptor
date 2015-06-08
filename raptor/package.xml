@@ -44,7 +44,6 @@
   <build_depend>cmake_modules</build_depend>
 
   <build_depend>cv_bridge</build_depend>
-  <build_depend>data</build_depend>
   <build_depend>ffld</build_depend>
   <build_depend>image_transport</build_depend>
   <build_depend>libopencv-dev</build_depend>
@@ -57,7 +56,6 @@
   <build_depend>std_msgs</build_depend>
   <build_depend>tf</build_depend>
   <run_depend>cv_bridge</run_depend>
-  <run_depend>data</run_depend>
   <run_depend>ffld</run_depend>
   <run_depend>image_transport</run_depend>
   <run_depend>libopencv-dev</run_depend>
